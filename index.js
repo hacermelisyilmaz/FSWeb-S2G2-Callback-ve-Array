@@ -7,11 +7,9 @@ const { fifaData } = require("./fifa.js");
 
 //(a) 2014 Dünya kupası Finali Evsahibi takım ismi (dizide "Home Team Name" anahtarı)
 
-const isYear2014 = (match) => match["Year"] === 2014;
-const matchesIn2014 = fifaData.filter(isYear2014);
-//console.log(matchesIn2014);
-const isFinal = (match) => match["Stage"] === "Final";
-const finalIn2014 = matchesIn2014.filter(isFinal);
+const isFinalIn2014 = (match) =>
+  match["Year"] === 2014 && match["Stage"] === "Final";
+const finalIn2014 = fifaData.filter(isFinalIn2014);
 console.log(finalIn2014[0]["Home Team Name"]);
 
 //(b) 2014 Dünya kupası Finali Deplasman takım ismi  (dizide "Away Team Name" anahtarı)
