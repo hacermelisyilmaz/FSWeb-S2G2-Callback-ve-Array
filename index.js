@@ -149,14 +149,30 @@ OrtalamaGolSayisi(Finaller(fifaData));
 /// EKSTRA ÇALIŞMALAR ///
 
 /*  BONUS 1:  
-	`UlkelerinKazanmaSayilari` isminde bir fonksiyon oluşturun, parametre olarak `data` ve `takım kısaltmalarını` alacak ve hangi ülkenin kaç dünya kupası olduğunu döndürecek
+	`UlkelerinKazanmaSayilari` isminde bir fonksiyon oluşturun, parametre olarak `data` ve `takım kısaltmalarını` 
+	alacak ve hangi ülkenin kaç dünya kupası olduğunu döndürecek
 	
 	İpucu: "takım kısaltmaları" (team initials) için datada araştırma yapın!
-İpucu: `.reduce` Kullanın*/
+	İpucu: `.reduce` Kullanın*/
 
-function UlkelerinKazanmaSayilari(/* kodlar buraya */) {
-  /* kodlar buraya */
+function UlkelerinKazanmaSayilari(aFifaData, aInitial) {
+  return aFifaData.reduce((cup, match) => {
+    if (
+      match["Home Team Goals"] > match["Away Team Goals"] &&
+      match["Home Team Goals"] === aInitial
+    ) {
+      return cup + 1;
+    }
+    if (
+      match["Home Team Goals"] < match["Away Team Goals"] &&
+      match["Away Team Goals"] === aInitial
+    ) {
+      return cup + 1;
+    }
+  }, 0);
 }
+
+console.log(UlkelerinKazanmaSayilari(fifaData, "FRA"));
 
 /*  BONUS 2:  
 EnCokGolAtan() isminde bir fonksiyon yazın, `data` yı parametre olarak alsın ve Dünya kupası finallerinde en çok gol atan takımı döndürsün */
