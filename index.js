@@ -39,6 +39,15 @@ console.log(
 );
 
 //(e) 2014 Dünya kupası finali kazananı*/
+const winnerTeam = () => {
+  if (finalIn2014[0]["Home Team Goals"] > finalIn2014[0]["Away Team Goals"]) {
+    return finalIn2014[0]["Home Team Name"];
+  } else {
+    return finalIn2014[0]["Away Team Name"];
+  }
+};
+
+console.log("2014 Dünya Kupası Finali kazananı: ", winnerTeam());
 
 /*  Görev 2: 
 	Finaller adlı fonksiyonu kullanarak aşağıdakileri uygulayın:
