@@ -70,8 +70,11 @@ function Finaller(aFifaData) {
 	3. Finaller data setindeki tüm yılları içeren "years" adındaki diziyi(array) döndürecek
 	*/
 
-function Yillar(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Yillar(aFifaData, aFinaller) {
+  const finals = aFinaller(aFifaData);
+  const mapYear = (match) => match["Year"];
+  const years = finals.map(mapYear);
+  return years;
 }
 
 /*  Görev 4: 
