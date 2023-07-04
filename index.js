@@ -33,6 +33,11 @@ console.log(
 
 //(d)2014 Dünya kupası finali Deplasman takım golleri  (dizide "Away Team Goals" anahtarı)
 
+console.log(
+  "2014 Dünya Kupası Finali deplasman takım golleri: ",
+  finalIn2014[0]["Away Team Goals"]
+);
+
 //(e) 2014 Dünya kupası finali kazananı*/
 
 /*  Görev 2: 
