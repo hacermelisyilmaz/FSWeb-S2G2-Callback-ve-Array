@@ -136,9 +136,15 @@ function YillaraGoreKazananlar(aFifaData, aFinaller, aYillar, aKazananlar) {
 	
 */
 
-function OrtalamaGolSayisi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function OrtalamaGolSayisi(aFinaller) {
+  const totalGoals = aFinaller.reduce((total, match) => {
+    return total + match["Home Team Goals"] + match["Away Team Goals"];
+  }, 0);
+  const avg = totalGoals / aFinaller.length;
+  return avg.toFixed(2);
 }
+
+OrtalamaGolSayisi(Finaller(fifaData));
 
 /// EKSTRA ÇALIŞMALAR ///
 
