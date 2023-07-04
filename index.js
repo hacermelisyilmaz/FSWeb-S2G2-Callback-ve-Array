@@ -58,8 +58,9 @@ console.log("2014 Dünya Kupası Finali kazananı: ", winnerTeam());
 	💡 İPUCU - verilen data içindeki nesnelerin(objects) "Stage" anahtarına bakmalısınız
 */
 
-function Finaller(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Finaller(aFifaData) {
+  const isFinal = (match) => match["Stage"] === "Final";
+  return aFifaData.filter(isFinal);
 }
 
 /*  Görev 3: 
