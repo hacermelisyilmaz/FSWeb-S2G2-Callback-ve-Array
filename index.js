@@ -9,41 +9,42 @@ const { fifaData } = require("./fifa.js");
 
 const isFinalIn2014 = (match) =>
   match["Year"] === 2014 && match["Stage"] === "Final";
-const finalIn2014 = fifaData.filter(isFinalIn2014);
+const finalIn2014Array = fifaData.filter(isFinalIn2014);
+const finalIn2014 = finalIn2014Array[0];
 //console.log("2014 Dünya Kupası Finali: ", finalIn2014);
 
 console.log(
   "2014 Dünya Kupası Finali ev sahibi takım ismi: ",
-  finalIn2014[0]["Home Team Name"]
+  finalIn2014["Home Team Name"]
 );
 
 //(b) 2014 Dünya kupası Finali Deplasman takım ismi  (dizide "Away Team Name" anahtarı)
 
 console.log(
   "2014 Dünya Kupası Finali deplasman takım ismi: ",
-  finalIn2014[0]["Away Team Name"]
+  finalIn2014["Away Team Name"]
 );
 
 //(c) 2014 Dünya kupası finali Ev sahibi takım golleri (dizide "Home Team Goals" anahtarı)
 
 console.log(
   "2014 Dünya Kupası Finali ev sahibi takım golleri: ",
-  finalIn2014[0]["Home Team Goals"]
+  finalIn2014["Home Team Goals"]
 );
 
 //(d)2014 Dünya kupası finali Deplasman takım golleri  (dizide "Away Team Goals" anahtarı)
 
 console.log(
   "2014 Dünya Kupası Finali deplasman takım golleri: ",
-  finalIn2014[0]["Away Team Goals"]
+  finalIn2014["Away Team Goals"]
 );
 
 //(e) 2014 Dünya kupası finali kazananı*/
 const winnerTeam = () => {
-  if (finalIn2014[0]["Home Team Goals"] > finalIn2014[0]["Away Team Goals"]) {
-    return finalIn2014[0]["Home Team Name"];
+  if (finalIn2014["Home Team Goals"] > finalIn2014["Away Team Goals"]) {
+    return finalIn2014["Home Team Name"];
   } else {
-    return finalIn2014[0]["Away Team Name"];
+    return finalIn2014["Away Team Name"];
   }
 };
 
