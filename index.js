@@ -99,8 +99,6 @@ function Kazananlar(aFifaData, aFinaller) {
   return winners;
 }
 
-console.log(Kazananlar(fifaData, Finaller));
-
 /*  Görev 5: 
 	Bir higher-order fonksiyonu olan YillaraGoreKazananlar isimli fonksiyona aşağıdakileri uygulayın:
 	1. fifaData dizisini(array) fonksiyonunun birinci parametresi olarak alacak
@@ -112,8 +110,16 @@ console.log(Kazananlar(fifaData, Finaller));
 	💡 İPUCU: her cümlenin adım 4'te belirtilen cümleyle birebir aynı olması gerekmektedir.
 */
 
-function YillaraGoreKazananlar(/* kodlar buraya */) {
-  /* kodlar buraya */
+function YillaraGoreKazananlar(aFifaData, aFinaller, aYillar, aKazananlar) {
+  const years = aYillar(aFifaData, aFinaller);
+  const winners = aKazananlar(aFifaData, aFinaller);
+  const winnersInYears = [];
+  for (let i = 0; i < years.length; i++) {
+    winnersInYears.push(
+      `${years[i]} yılında, ${winners[i]} dünya kupasını kazandı!`
+    );
+  }
+  return winnersInYears;
 }
 
 /*  Görev 6: 
